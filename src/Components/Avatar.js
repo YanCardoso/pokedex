@@ -7,10 +7,10 @@ function Avatar({ avatar, name, id }) {
   const n = name;
   return (
     <div className="avatar--card">
-      <img src={avatar} />
+      <img src={avatar} alt="Pokemon Avatar"/>
       <div className="avatar--name">
         <div className="avatar--number">
-          <img src="pokeIcon.png" />
+          <img src="pokeIcon.png" alt="PokeIcon"/>
           <p>{`#${id}`}</p>
         </div>
         <p>{name !== undefined ? name.toUpperCase() : '...'}</p>

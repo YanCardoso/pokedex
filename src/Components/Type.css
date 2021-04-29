@@ -1,14 +1,17 @@
 .type--container {
-
-    height: 30px;
-    width: 150px;
-    position: relative;
-    left: -60px;
-    margin-bottom: 5px;
+  height: 30px;
+  width: 150px;
+  position: relative;
+  left: -60px;
+  margin-bottom: 5px;
 }
 
 .type--container > img {
-    border-radius: 5px;
-    height: 30px;
-    width: 30px;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+}
+
+img + img {
+  margin-left: 5px;
 }

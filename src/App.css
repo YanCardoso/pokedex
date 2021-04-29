@@ -1,22 +1,57 @@
 :root {
   --grass: #38bf4b;
+  --grass-sh: #258031;
+
   --fire: #ff9741;
+  --fire-sh: #BF7030;
+
   --electric: #fbd100;
+  --electric-sh: #BA9B00;
+
   --normal: #919aa2;
+  --normal-sh: #5A5F63;
+
   --poison: #b567ce;
+  --poison-sh: #7D478F;
+
   --bug: #83c300;
+  --bug-sh: #578200;
+
   --dark: #5b5466;
+  --dark-sh: #252427;
+
   --dragon: #006fc9;
+  --dragon-sh: #004C8A;
+
   --fairy: #fb89eb;
+  --fairy-sh: #BA66AF;
+
   --fighting: #e0306a;
+  --fighting-sh: #A1224C;
+
   --flying: #89aae3;
+  --flying-sh: #627AA3;
+  
   --ghost: #4c6ab2;
+  --ghost-sh: #314573;
+
   --ground: #e87236;
+  --ground-sh: #A85227;
+
   --ice: #4cd1c0;
+  --ice-sh: #349185;
+
   --psychic: #ff6675;
+  --psychic-sh: #BF4D58;
+
   --rock: #c8b686;
+  --rock-sh: #877B5B;
+
   --steel: #5a8ea2;
+  --steel-sh: #385763;
+
   --water: #3692dc;
+  --water-sh: #27679C;
 }
 
 .global {

@@ -3,24 +3,33 @@ import Card from "./Components/Card";
 import getApi from "./Api.js";
 import { useState, useEffect } from "react";
 
+const tt = Math.random() * 900;
+
 function App() {
-  const [state, setState] = useState();
-  const [img, setImg] = useState();
-  const [name, setName] = useState();
-  const [id, setId] = useState();
-  const [type, setType] = useState();
+  const [state, setState] = useState(null);
+  const [img, setImg] = useState(undefined);
+  const [name, setName] = useState(undefined);
+  const [id, setId] = useState(undefined);
+  const [type, setType] = useState(undefined);
+  const [test, setTest] = useState(1);
+
+  function typesIcon(ty) {
+    let listT = ty.map((r) => r["type"]["name"]);
+    setType(listT);
+  }
 
   useEffect(() => {
     const loadAll = async () => {
       try {
-        const result = await getApi("arcanine");
+        const result = await getApi(Math.floor(tt));
         setState(result);
         setImg(result["sprites"]["other"]["official-artwork"].front_default);
         setId(result["id"]);
-        setType(result["types"][0]["type"]["name"]);
-        setName(result["name"]);
 
-        console.log(result);
+        // chamada pra func de pegar os tipos
+        typesIcon(result["types"]);
+
+        setName(result["name"]);
       } catch (error) {
         console.error(error);
       }

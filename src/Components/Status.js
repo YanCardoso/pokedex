@@ -6,7 +6,7 @@ import './Status.css'
 function Status() {
   return (
     <div className="status--card">
-      <img src=""/>
+      <img src="" alt=""/>
 
       <div className="status--graphics">
 
