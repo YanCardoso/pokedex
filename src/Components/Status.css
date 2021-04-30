@@ -1,9 +1,54 @@
 .status--card {
   height: 150px;
-  width: 260px;
-  background: rgba(255, 255, 255, 0.5);
+  width: 270px;
+  background: rgba(255, 255, 255, 0.7);
 
   border-radius: 5px;
 
   margin-top: 15px;
 }
+
+.status--graphics {
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.xp {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 2px;
+  margin-left: 45px;
+  
+}
+.xp p {
+  position: relative;
+  text-align: center;
+  margin-right: 5px;
+  left: -45px;
+  color: gray;
+}
+
+
+.base {
+  background: #7c7d8085;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  border-radius: 6px;
+
+}
+
+.base-current {
+  display: flex;
+  position: absolute;
+  background: #0cb135;
+  height: 6px;
+  border-radius: 5px;
+
+}
+

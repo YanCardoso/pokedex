@@ -4,7 +4,7 @@ import Avatar from "./Avatar";
 import Status from "./Status";
 import Type from "./Type";
 
-function Card({ avatar, name, id, type }) {
+function Card({ avatar, name, id, type, status }) {
   const [typeOn, setTypeOn] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function Card({ avatar, name, id, type }) {
       >
         <Type type={type} />
         <Avatar avatar={avatar} name={name} id={id} />
-        <Status />
+        <Status status={status}/>
       </div>
     );
   } else {
