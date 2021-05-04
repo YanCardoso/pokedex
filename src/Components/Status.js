@@ -14,7 +14,7 @@ function Status({ status }) {
             <span
               className="base-current"
               style={{
-                width: `${status[0]}px`,
+                width: `calc(100% * ${status[0]}/255)`,
               }}
             ></span>
           ) : (
@@ -29,7 +29,7 @@ function Status({ status }) {
             <span
               className="base-current"
               style={{
-                width: `${status[1]}px`,
+                width: `calc(100% * ${status[1]}/255)`,
               }}
             ></span>
           ) : (
@@ -43,7 +43,7 @@ function Status({ status }) {
             <span
               className="base-current"
               style={{
-                width: `${status[2]}px`,
+                width: `calc(100% * ${status[2]}/255)`,
               }}
             ></span>
           ) : (
@@ -51,13 +51,13 @@ function Status({ status }) {
           )}
         </div>
         <div className="xp">
-          <p>spatk</p>
+          <p>sp-atk</p>
           <span className="base"></span>
           {status !== undefined ? (
             <span
               className="base-current"
               style={{
-                width: `${status[3]}px`,
+                width: `calc(100% * ${status[3]}/255)`,
               }}
             ></span>
           ) : (
@@ -65,13 +65,13 @@ function Status({ status }) {
           )}
         </div>
         <div className="xp">
-          <p>spdef</p>
+          <p>sp-def</p>
           <span className="base"></span>
           {status !== undefined ? (
             <span
               className="base-current"
               style={{
-                width: `${status[4]}px`,
+                width: `calc(100% * ${status[4]}/255)`,
               }}
             ></span>
           ) : (
@@ -85,7 +85,7 @@ function Status({ status }) {
             <span
               className="base-current"
               style={{
-                width: `${status[5]}px`,
+                width: `calc(100% * ${status[5]}/255)`,
               }}
             ></span>
           ) : (

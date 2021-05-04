@@ -2,6 +2,7 @@ import "./App.css";
 import Card from "./Components/Card";
 import getApi from "./Api.js";
 import { useState, useEffect } from "react";
+import SearchBar from "./Components/SearchBar";
 
 const tt = Math.random() * 899;
 
@@ -15,14 +16,14 @@ function App() {
 
   //função de pegar tipos e transformar em um array
   function typesIcon(ty) {
-    let listT = ty.map(r => r["type"]["name"]);
+    let listT = ty.map((r) => r["type"]["name"]);
     setType(listT);
   }
 
   function getStatus(st) {
-    let listStatus = st.map(r => r["base_stat"]);
+    let listStatus = st.map((r) => r["base_stat"]);
     console.log(listStatus);
-    setStatus(listStatus)
+    setStatus(listStatus);
   }
 
   useEffect(() => {
@@ -33,10 +34,10 @@ function App() {
         setImg(result["sprites"]["other"]["official-artwork"].front_default);
         setId(result["id"]);
         console.log(result);
-        // chamada pra func de pegar os tipos
+        // chamada para func de pegar os tipos
         typesIcon(result["types"]);
-
-        getStatus(result["stats"])
+        //chamada para pegar stats
+        getStatus(result["stats"]);
 
         setName(result["name"]);
       } catch (error) {
@@ -55,6 +56,7 @@ function App() {
       }}
     >
       <div className="app">
+        <SearchBar />
         <Card avatar={img} name={name} id={id} type={type} status={status} />
       </div>
     </div>
