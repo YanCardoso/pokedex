@@ -4,33 +4,37 @@ import getApi from "./Api.js";
 import { useState, useEffect } from "react";
 import SearchBar from "./Components/SearchBar";
 
-const tt = Math.random() * 899;
+// const tt = Math.random() * 899;
+// Math.floor(tt)
 
 function App() {
-  const [state, setState] = useState(null);
+  const [search, setSearch] = useState("1");
   const [img, setImg] = useState(undefined);
   const [name, setName] = useState(undefined);
   const [id, setId] = useState(undefined);
   const [type, setType] = useState(undefined);
   const [status, setStatus] = useState(undefined);
 
-  //função de pegar tipos e transformar em um array
+  //função de pegar tipos
   function typesIcon(ty) {
     let listT = ty.map((r) => r["type"]["name"]);
     setType(listT);
   }
-
+  //função de pegar os status
   function getStatus(st) {
     let listStatus = st.map((r) => r["base_stat"]);
-    console.log(listStatus);
     setStatus(listStatus);
   }
+
+  function getSearchInput(pokemon) {
+    setSearch(pokemon)
+  }
+
 
   useEffect(() => {
     const loadAll = async () => {
       try {
-        const result = await getApi(Math.floor(tt));
-        setState(result);
+        const result = await getApi(search);
         setImg(result["sprites"]["other"]["official-artwork"].front_default);
         setId(result["id"]);
         console.log(result);
@@ -46,7 +50,7 @@ function App() {
     };
 
     loadAll();
-  }, [name]);
+  }, [search]);
 
   return (
     <div
@@ -56,7 +60,7 @@ function App() {
       }}
     >
       <div className="app">
-        <SearchBar />
+        <SearchBar search={(poke) => {getSearchInput(poke)}}/>
         <Card avatar={img} name={name} id={id} type={type} status={status} />
       </div>
     </div>
