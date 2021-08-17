@@ -1,5 +1,6 @@
 .card--container {
   height: 475px;
+  max-width: 300px;
   width: 300px;
   border-radius: 10px;
   box-shadow: 2px 2px 6px #000;

@@ -27,9 +27,8 @@ function App() {
   }
 
   function getSearchInput(pokemon) {
-    setSearch(pokemon)
+    setSearch(pokemon);
   }
-
 
   useEffect(() => {
     const loadAll = async () => {
@@ -37,7 +36,6 @@ function App() {
         const result = await getApi(search);
         setImg(result["sprites"]["other"]["official-artwork"].front_default);
         setId(result["id"]);
-        console.log(result);
         // chamada para func de pegar os tipos
         typesIcon(result["types"]);
         //chamada para pegar stats
@@ -54,13 +52,17 @@ function App() {
 
   return (
     <div
-      className="global"
+      className="app"
       style={{
         backgroundImage: "url(/bg.png)",
       }}
     >
-      <div className="app">
-        <SearchBar search={(poke) => {getSearchInput(poke)}}/>
+      <SearchBar
+        search={(poke) => {
+          getSearchInput(poke);
+        }}
+      />
+      <div className="cardlist">
         <Card avatar={img} name={name} id={id} type={type} status={status} />
       </div>
     </div>
